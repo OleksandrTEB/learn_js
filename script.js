@@ -10,16 +10,7 @@
 //     }
 // }
 
-
-const mojaPostacFake = {
-    level: 0,
-    skills: [],
-    equipment: {
-        weapon: "",
-        armor: "",
-        items: []
-    }
-}
+const mojaPostac = createCharacter("Adam", "Support");
 
 function createCharacter(name, role) {
     if (name.length === 3) {
@@ -29,7 +20,14 @@ function createCharacter(name, role) {
 
     return {
         name: name,
-        role: role
+        role: role,
+        level: 0,
+        skills: [],
+        equipment: {
+            weapon: "",
+            armor: "",
+            items: []
+        }
     }
 }
 
@@ -90,8 +88,6 @@ function learnSkill(mojaPostac, newSkill) {
     }
     mojaPostac .skills.push(newSkill)
 }
-
-const mojaPostac = Object.assign({}, mojaPostacFake, createCharacter("Adam", "Pomocnik"))
 
 
 addItem(mojaPostac, "Kompas")
